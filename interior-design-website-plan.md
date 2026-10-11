@@ -2,83 +2,68 @@
 
 ## Summary
 
-Build a premium, responsive marketing website inspired by `WhatsApp Video 2026-10-09 at 22.17.12.mp4`.
+Build a premium Astro + TypeScript marketing website inspired by the supplied reference video without copying its branding, text, contact details, or proprietary imagery.
 
-- Stack: Astro + TypeScript.
-- Audience: residential and commercial clients.
-- Pages: Home, About, Services, Projects, Project Detail, Process, and Contact.
-- Style: warm neutrals, editorial typography, large imagery, generous spacing, and refined motion.
-- Hosting: Vercel.
-- Enquiries: Resend through a server endpoint protected by Cloudflare Turnstile.
-- Content: explicit brand placeholders, licensed placeholder photography, and clearly fictional sample projects.
-- Do not copy reference branding, text, contact details, or proprietary imagery.
+- Primary pages: Home, About Us, Projects, Services, and Contact Us.
+- Utility routes: custom 404, Privacy, robots, and sitemap.
+- Hosting: Netlify.
+- Content: explicit brand placeholders and clearly fictional sample projects until approved facts arrive.
+- Search indexing: disabled until release gates are complete.
 
-## Experience and Architecture
-
-- Create shared header, mobile navigation, footer, page shell, section heading, CTA, image, and form components.
-- Centralize business placeholders in typed site data. Store sample projects in an Astro content collection.
-- Use mostly prerendered pages. Enable `@astrojs/vercel` only for on-demand enquiry handling.
-- Implement motion with CSS, Intersection Observer, and a small Astro island for the before/after slider. Avoid a heavy animation library.
-- Respect `prefers-reduced-motion`, keyboard navigation, visible focus states, semantic headings, descriptive alt text, and WCAG AA contrast.
-- Keep the source video as an internal design reference. Do not publish or embed it unless usage rights are confirmed.
-
-## Phase 1: Foundation and Visual System
+## Chunk 1: Foundation — Complete
 
 - Initialize Astro, TypeScript, ESLint, Prettier, Vitest, and Playwright.
-- Define color, typography, spacing, radius, shadow, container, and motion tokens.
-- Create responsive shell, navigation, footer, SEO metadata, sitemap, robots handling, and custom 404.
-- Produce a reference board from selected video frames covering typography, palette, spacing, interactions, and motion.
-- Demo: shared shell at mobile, tablet, and desktop sizes.
+- Define warm-neutral design tokens and editorial typography.
+- Create responsive header, mobile navigation, footer, page shell, SEO metadata, favicon, sitemap, robots handling, and custom 404.
+- Review selected video frames and record internal visual guidance.
+- Deploy the placeholder foundation to Netlify with `noindex` protection.
+- Verify type checks, lint, production build, live homepage, robots, and custom 404.
 
-## Phase 2: Core Marketing Pages
+## Chunk 2: Required Pages
 
-- Build Home with editorial hero, residential/commercial positioning, featured projects, before/after module, process preview, services, testimonial placeholder, and enquiry CTA.
-- Build About, Services, and Process as separate routes with original placeholder copy.
-- Use local optimized images with recorded source and license information.
-- Demo: complete navigation and responsive page flow without broken links.
+- Use primary navigation order: Home, About Us, Projects, Services, Contact Us.
+- Home: hero, studio introduction, services preview, selected projects, compact process section, and contact CTA.
+- About Us: placeholder studio story, values, approach, and capabilities without invented history or claims.
+- Projects: one gallery page with residential, commercial, and hospitality samples visibly marked fictional.
+- Services: residential, commercial, spatial planning, renovation, styling, and project coordination placeholders.
+- Contact Us: contact placeholders, enquiry form interface, privacy notice, and disabled-delivery message until backend setup.
+- Keep process content inside Home. Do not add standalone Process or Project Detail pages in v1.
 
-## Phase 3: Project System
+## Chunk 3: Visual Assets and Interaction
 
-- Define typed project fields: slug, title, category, location placeholder, summary, services, year, hero, gallery, challenge, approach, outcome, and featured status.
-- Build a filterable Projects index and dynamic Project Detail routes.
-- Add three clearly labeled fictional samples: residential renovation, office interior, and hospitality concept.
-- Build an accessible before/after comparison with keyboard controls and a static fallback.
-- Demo: filtering, project navigation, galleries, and transformation interaction.
+- Create original interior imagery and record source and rights notes.
+- Add an accessible before/after comparison on Home or Projects.
+- Add restrained scroll reveals with a reduced-motion fallback.
+- Keep Projects as a simple gallery without filters or detail routes.
 
-## Phase 4: Contact and Enquiry Delivery
+## Chunk 4: Enquiry Delivery
 
-- Build fields for name, email, phone, project location, space type, approximate area, budget range, message, and consent.
-- Validate required fields in the browser and again on the server. Normalize values and reject unexpected fields.
-- Verify the Turnstile token server-side before sending.
-- Add `POST /api/enquiries` with structured success, validation, spam, and delivery-error responses.
-- Send owner notifications through Resend. Keep the API key, sender, and recipient addresses server-only.
-- Prevent duplicate submissions while pending. Preserve entered values after recoverable errors.
-- Demo: valid email delivery plus visible handling for invalid, spam, and provider-failure cases.
+- Add name, email, phone, project location, space type, area, budget, message, and consent fields.
+- Validate in browser and server. Normalize values and reject unexpected fields.
+- Add a honeypot, Cloudflare Turnstile, and duplicate-submit prevention.
+- Send owner notifications through Resend using server-only environment variables.
+- Add a footer-only Privacy page before enabling live submissions.
+- Preserve entered values after recoverable errors.
 
-## Phase 5: Production Hardening and Release
+## Chunk 5: Verification and Release
 
-- Add Open Graph metadata, canonical URLs, favicon, and social preview.
-- Add structured organization and service data only after real facts arrive.
-- Optimize responsive images, font loading, JavaScript, and layout stability.
-- Keep placeholder deployments `noindex`. Remove `noindex` only after brand, contact, service-area, project, legal, and image-rights review.
-- Connect the repository to Vercel, configure preview and production environment variables, and verify preview before promotion.
-- Update `AGENTS.md` with real commands and structure after setup.
+- Test every primary route, unknown-route 404 handling, mobile navigation, keyboard use, focus states, contrast, reduced motion, and horizontal overflow.
+- Check widths at 320, 390, 768, 1024, and 1440 pixels.
+- Require clean formatting, lint, type checks, tests, and production build.
+- Redeploy each approved chunk to the existing Netlify site.
+- Remove `noindex` only after real branding, contacts, legal copy, projects, and image rights are approved.
 
-## Test and Acceptance Plan
+## Data and Interface Decisions
 
-- Unit-test project filtering, form validation, payload normalization, and email-template rendering.
-- Integration-test enquiry success, invalid fields, failed Turnstile, missing environment variables, and Resend errors.
-- Playwright-test navigation, mobile menu, project filtering, before/after keyboard behavior, form states, and 404 handling.
-- Check widths at 320, 390, 768, 1024, and 1440 pixels with no horizontal overflow.
-- Run keyboard-only, reduced-motion, contrast, and automated accessibility checks.
-- Require clean lint, type check, tests, and production build.
-- Target mobile Lighthouse scores of at least 90 for Performance and 95 for Accessibility, Best Practices, and SEO.
-- Verify live Vercel routes, assets, enquiry delivery, metadata, and placeholder `noindex` behavior.
+- Keep brand and contact placeholders in typed site data.
+- Store service and fictional project summaries in typed data files.
+- Keep the enquiry endpoint at `POST /api/enquiries`.
+- Keep CMS, authentication, blog, multilingual support, analytics, admin dashboard, and project-detail routes outside v1.
 
-## Assumptions and Release Gates
+## Release Gates
 
-- Astro is preferred over Next.js because this is primarily a content-led static site with one server feature.
-- Placeholder brand facts must remain visibly marked and must never become invented production claims.
-- Licensed images are stored locally and tracked with source and license notes.
-- Custom domain, analytics, CMS, authentication, blog, multilingual support, and admin dashboard are outside v1.
-- Production launch requires real brand identity, destination email, verified sending domain, legal/privacy copy, approved project content, and confirmed image rights.
+- Real brand identity and contact details supplied.
+- Destination email and sending domain verified.
+- Privacy and legal copy approved.
+- Project content and all image rights confirmed.
+- Live enquiry delivery verified before launch.

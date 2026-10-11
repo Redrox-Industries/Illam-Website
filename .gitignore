@@ -1,0 +1,17 @@
+node_modules/
+.npm-cache/
+dist/
+.astro/
+.vercel/
+.netlify/
+.astro-preview.log
+.reference/
+.env
+.env.*
+!.env.example
+playwright-report/
+test-results/
+coverage/
+Screenshot 2026-10-11 214003.png
+WhatsApp Video 2026-10-09 at 22.17.12.mp4
+

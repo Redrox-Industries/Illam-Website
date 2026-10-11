@@ -2,20 +2,18 @@
 
 ## Project Structure & Module Organization
 
-This repository is currently a pre-development workspace. Its only project asset is `WhatsApp Video 2026-10-09 at 22.17.12.mp4`, a 91-second visual reference for the planned interior-design website. Treat the video as design inspiration for the warm neutral palette, editorial typography, spacious layouts, interior imagery, before/after interaction, enquiry form, and scroll-led presentation. Do not copy branding, text, contact details, or proprietary imagery from the reference.
+This repository contains an Astro + TypeScript website. Application code lives in `src/`, static assets in `public/`, internal design notes in `docs/`, and generated output in `dist/`. `WhatsApp Video 2026-10-09 at 22.17.12.mp4` is a 91-second visual reference. Treat it as design inspiration for the warm neutral palette, editorial typography, spacious layouts, interior imagery, before/after interaction, enquiry form, and scroll-led presentation. Do not copy branding, text, contact details, or proprietary imagery from the reference.
 
 When implementation begins, keep application code in `src/`, static assets in `public/`, and automated tests either beside their modules or in `tests/`, following the selected framework's conventions. Group components by feature rather than creating broad utility folders prematurely.
 
 ## Build, Test, and Development Commands
 
-No package manifest, framework, or build scripts exist yet. Do not document or depend on commands until the project is initialized. After setup, expose standard scripts through `package.json`, such as:
-
-- `npm run dev` - start the local development server.
-- `npm run build` - create the production build.
-- `npm run lint` - run configured static checks.
-- `npm test` - execute automated tests.
-
-Update this guide when actual tooling differs.
+- `npm run dev` - start the Astro development server.
+- `npm run check` - run Astro and TypeScript diagnostics.
+- `npm run lint` - run ESLint.
+- `npm run build` - run diagnostics and create the production build.
+- `npm test` - execute Vitest tests.
+- `npm run test:e2e` - execute Playwright tests.
 
 ## Coding Style & Naming Conventions
 

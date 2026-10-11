@@ -1,0 +1,39 @@
+---
+import { primaryNavigation, site } from '../data/site';
+---
+
+<footer class="site-footer">
+  <div class="shell footer-grid">
+    <div>
+      <p class="eyebrow">Begin with a conversation</p>
+      <h2>Shape a space that feels unmistakably yours.</h2>
+      <a class="text-link" href="/contact"
+        >Plan your space <span aria-hidden="true">↗</span></a
+      >
+    </div>
+    <div class="footer-nav">
+      <p class="footer-label">Explore</p>
+      <nav aria-label="Footer">
+        <ul>
+          {
+            primaryNavigation.map((item) => (
+              <li>
+                <a href={item.href}>{item.label}</a>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
+    </div>
+    <div class="footer-contact">
+      <p class="footer-label">Contact placeholders</p>
+      <p>{site.email}</p>
+      <p>{site.phone}</p>
+      <p>{site.location}</p>
+    </div>
+  </div>
+  <div class="shell footer-base">
+    <p>© {new Date().getFullYear()} {site.name}. Placeholder website.</p>
+    <a href="#top">Back to top <span aria-hidden="true">↑</span></a>
+  </div>
+</footer>
