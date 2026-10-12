@@ -4,7 +4,7 @@ Premium interior-design marketing website for Redrox Industries. The project use
 
 ## Current status
 
-Chunks 1 and 2 are complete locally. The live preview status for chunk 2 must be verified after deployment.
+Chunks 1, 2, and 3 are complete locally. The live preview still needs the later chunks deployed and verified.
 
 - Live preview: <https://redrox-interior-preview.netlify.app>
 - Indexing: disabled with `noindex` while business facts and content remain placeholders
@@ -34,6 +34,14 @@ The reference video and client screenshot remain local. They are intentionally e
 - Contact placeholders and a disabled enquiry form with a clear privacy notice
 
 No form submission, project detail routes, or real project images are included in this chunk.
+
+## What chunk 3 includes
+
+- Original generated concept imagery for Home and the fictional Projects gallery
+- Keyboard-accessible before/after slider using two images of the same fictional room
+- Restrained scroll reveals with no-motion and no-JavaScript fallbacks
+- Refined editorial footer with contact placeholders clearly marked
+- Image source and usage notes in [`docs/imagery-rights.md`](./docs/imagery-rights.md)
 
 ## Technology
 

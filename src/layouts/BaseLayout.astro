@@ -1,6 +1,7 @@
 ---
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
+import ScrollReveal from '../components/ScrollReveal.astro';
 import { site } from '../data/site';
 import '../styles/global.css';
 
@@ -48,5 +49,6 @@ const socialImage = new URL(image, Astro.site);
       <slot />
     </main>
     <Footer />
+    <ScrollReveal />
   </body>
 </html>

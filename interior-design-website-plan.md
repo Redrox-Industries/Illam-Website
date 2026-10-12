@@ -30,12 +30,13 @@ Build a premium Astro + TypeScript marketing website inspired by the supplied re
 - Keep process content inside Home. Do not add standalone Process or Project Detail pages in v1.
 - Implemented with visibly marked placeholder content, fictional project studies, and a disabled enquiry form. Real facts, imagery, and delivery remain later work.
 
-## Chunk 3: Visual Assets and Interaction
+## Chunk 3: Visual Assets and Interaction — Complete locally
 
 - Create original interior imagery and record source and rights notes.
 - Add an accessible before/after comparison on Home or Projects.
 - Add restrained scroll reveals with a reduced-motion fallback.
 - Keep Projects as a simple gallery without filters or detail routes.
+- Refine the shared footer with an editorial contact lead and clearly marked placeholder details.
 
 ## Chunk 4: Enquiry Delivery
 

@@ -67,7 +67,9 @@ export const sampleProjects = [
     category: 'Residential',
     description:
       'Fictional sample: a quiet home organised around light and a central courtyard.',
-    tone: 'clay',
+    image: '/images/sample-residential.webp',
+    imageAlt:
+      'Fictional residential interior concept with a curved sofa and leafy courtyard',
   },
   {
     number: '02',
@@ -75,7 +77,9 @@ export const sampleProjects = [
     category: 'Commercial',
     description:
       'Fictional sample: a flexible workplace with warm, practical shared areas.',
-    tone: 'olive',
+    image: '/images/sample-commercial.webp',
+    imageAlt:
+      'Fictional commercial interior concept with a long timber worktable',
   },
   {
     number: '03',
@@ -83,6 +87,8 @@ export const sampleProjects = [
     category: 'Hospitality',
     description:
       'Fictional sample: a small retreat centred on rest, texture, and easy movement.',
-    tone: 'sand',
+    image: '/images/sample-hospitality.webp',
+    imageAlt:
+      'Fictional guesthouse lounge concept with woven seating and a garden view',
   },
 ] as const;

@@ -11,8 +11,8 @@ import { sampleProjects } from '../data/site';
     <p class="eyebrow">Projects · Fictional samples</p><h1>
       Spaces worth<br /><em>imagining.</em>
     </h1><p class="page-lede">
-      These concepts demonstrate gallery structure only. They are fictional,
-      with abstract artwork instead of project photography.
+      These concepts demonstrate gallery structure only. Images are original
+      generated studies of fictional spaces, not photographs of completed work.
     </p>
   </header>
   <section class="foundation-section shell">
@@ -21,9 +21,14 @@ import { sampleProjects } from '../data/site';
         sampleProjects.map((project) => (
           <article class="project-card">
             <>
-              <div class={`project-art ${project.tone}`} aria-hidden="true">
-                <span />
-              </div>
+              <img
+                class="project-image"
+                src={project.image}
+                alt={project.imageAlt}
+                width="1440"
+                height="960"
+                loading="lazy"
+              />
               <p class="eyebrow">Fictional sample · {project.category}</p>
               <h2>{project.title}</h2>
               <p>{project.description}</p>
