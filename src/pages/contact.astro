@@ -1,0 +1,107 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../data/site';
+---
+
+<BaseLayout
+  title="Contact Us"
+  description="Contact placeholders and enquiry form preview. Message delivery is not yet available."
+>
+  <header class="page-intro shell">
+    <p class="eyebrow">Contact Us · Preview</p><h1>
+      Let's talk about<br /><em>your space.</em>
+    </h1><p class="page-lede">
+      Studio contact details are pending. Enquiry form shows planned fields;
+      message delivery is disabled until backend and privacy setup.
+    </p>
+  </header>
+  <section class="foundation-section shell contact-grid">
+    <div>
+      <p class="eyebrow">Contact placeholders</p><h2>Find the studio.</h2><dl
+        class="contact-details"
+      >
+        <div><dt>Email</dt><dd>{site.email}</dd></div><div>
+          <dt>Phone</dt><dd>{site.phone}</dd>
+        </div><div><dt>Location</dt><dd>{site.location}</dd></div><div>
+          <dt>Service areas</dt><dd>{site.availability}</dd>
+        </div>
+      </dl>
+    </div><div class="form-panel">
+      <p class="eyebrow">Enquiry form · Interface preview</p><h2>
+        Start a conversation.
+      </h2><p class="form-notice" role="status">
+        Message delivery is not available yet. This form cannot be submitted or
+        store your information.
+      </p><form aria-describedby="form-privacy">
+        <fieldset disabled>
+          <legend class="visually-hidden"
+            >Enquiry fields, currently unavailable</legend
+          ><div class="form-grid">
+            <label
+              >Your name <input
+                type="text"
+                name="name"
+                autocomplete="name"
+                placeholder="Your name"
+              /></label
+            ><label
+              >Email address <input
+                type="email"
+                name="email"
+                autocomplete="email"
+                placeholder="you@example.com"
+              /></label
+            ><label
+              >Phone number <input
+                type="tel"
+                name="phone"
+                autocomplete="tel"
+                placeholder="Phone number"
+              /></label
+            ><label
+              >Project location <input
+                type="text"
+                name="location"
+                placeholder="City or area"
+              /></label
+            ><label
+              >Space type <select name="spaceType"
+                ><option value="">Select a space</option><option
+                  >Residential</option
+                ><option>Commercial</option><option>Hospitality</option><option
+                  >Other</option
+                ></select
+              ></label
+            ><label
+              >Approximate area <input
+                type="text"
+                name="area"
+                placeholder="Area, if known"
+              /></label
+            ><label
+              >Estimated budget <input
+                type="text"
+                name="budget"
+                placeholder="Budget, if known"
+              /></label
+            ><label class="wide"
+              >Tell us more <textarea
+                name="message"
+                rows="5"
+                placeholder="A little about your project"></textarea></label
+            >
+          </div><label class="consent"
+            ><input type="checkbox" name="consent" /> I agree to be contacted about
+            my enquiry.</label
+          ><button class="button" type="submit"
+            >Send enquiry · Coming soon</button
+          >
+        </fieldset>
+      </form><p id="form-privacy" class="content-note">
+        Privacy notice: no data is collected through this disabled preview. A
+        full privacy page and working delivery will be added before submissions
+        are enabled.
+      </p>
+    </div>
+  </section>
+</BaseLayout>

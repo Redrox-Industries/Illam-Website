@@ -4,12 +4,11 @@ Premium interior-design marketing website for Redrox Industries. The project use
 
 ## Current status
 
-Chunk 1 is complete and deployed.
+Chunks 1 and 2 are complete locally. The live preview status for chunk 2 must be verified after deployment.
 
 - Live preview: <https://redrox-interior-preview.netlify.app>
 - Indexing: disabled with `noindex` while business facts and content remain placeholders
-- Implemented routes: Home, custom 404, robots, and sitemap
-- Planned primary routes: Home, About Us, Projects, Services, and Contact Us
+- Implemented routes: Home, About Us, Projects, Services, Contact Us, custom 404, robots, and sitemap
 - Current content: explicit placeholders only; no invented company facts or project claims
 
 ## What chunk 1 includes
@@ -25,6 +24,16 @@ Chunk 1 is complete and deployed.
 - Internal design-reference notes derived from selected frames of the supplied video
 
 The reference video and client screenshot remain local. They are intentionally excluded from Git and must not be published without confirmed rights.
+
+## What chunk 2 includes
+
+- Five primary pages with navigation in the agreed order
+- Home introduction, service and fictional project previews, process, and contact CTA
+- About Us story, values, approach, and capabilities, all marked as draft content
+- One fictional project gallery and six potential service placeholders
+- Contact placeholders and a disabled enquiry form with a clear privacy notice
+
+No form submission, project detail routes, or real project images are included in this chunk.
 
 ## Technology
 

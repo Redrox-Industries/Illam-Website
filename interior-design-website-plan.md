@@ -19,7 +19,7 @@ Build a premium Astro + TypeScript marketing website inspired by the supplied re
 - Deploy the placeholder foundation to Netlify with `noindex` protection.
 - Verify type checks, lint, production build, live homepage, robots, and custom 404.
 
-## Chunk 2: Required Pages
+## Chunk 2: Required Pages — Complete
 
 - Use primary navigation order: Home, About Us, Projects, Services, Contact Us.
 - Home: hero, studio introduction, services preview, selected projects, compact process section, and contact CTA.
@@ -28,6 +28,7 @@ Build a premium Astro + TypeScript marketing website inspired by the supplied re
 - Services: residential, commercial, spatial planning, renovation, styling, and project coordination placeholders.
 - Contact Us: contact placeholders, enquiry form interface, privacy notice, and disabled-delivery message until backend setup.
 - Keep process content inside Home. Do not add standalone Process or Project Detail pages in v1.
+- Implemented with visibly marked placeholder content, fictional project studies, and a disabled enquiry form. Real facts, imagery, and delivery remain later work.
 
 ## Chunk 3: Visual Assets and Interaction
 

@@ -1,0 +1,45 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { services } from '../data/site';
+---
+
+<BaseLayout
+  title="Services"
+  description="Preview of potential interior design services. Offerings await studio approval."
+>
+  <header class="page-intro shell">
+    <p class="eyebrow">Services · Scope pending</p><h1>
+      Ideas made<br /><em>for living.</em>
+    </h1><p class="page-lede">
+      These are service placeholders. Actual offerings, deliverables, and
+      availability will be confirmed with the studio.
+    </p>
+  </header>
+  <section class="foundation-section shell">
+    <div class="service-list">
+      {
+        services.map((service) => (
+          <article class="service-row">
+            <>
+              <span>{service.number}</span>
+              <h2>{service.title}</h2>
+              <p>{service.description}</p>
+            </>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+  <section class="section-band">
+    <div class="shell section-split">
+      <h2>Begin with your needs.</h2><div>
+        <p>
+          Share what kind of space you have in mind. Contact details and enquiry
+          delivery are pending setup.
+        </p><a class="text-link" href="/contact"
+          >Contact information <span aria-hidden="true">↗</span></a
+        >
+      </div>
+    </div>
+  </section>
+</BaseLayout>
