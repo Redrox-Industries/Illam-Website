@@ -607,6 +607,17 @@ h2 {
 .comparison-after {
   clip-path: inset(0 calc(100% - var(--split)) 0 0);
 }
+.comparison-range {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: ew-resize;
+  touch-action: pan-y;
+}
 .comparison-divider {
   position: absolute;
   top: 0;
@@ -616,6 +627,10 @@ h2 {
   background: var(--paper);
   transform: translateX(-50%);
   pointer-events: none;
+}
+.comparison-range:focus-visible + .comparison-divider::after {
+  outline: 3px solid var(--terracotta);
+  outline-offset: 4px;
 }
 .comparison-divider::after {
   position: absolute;
@@ -647,25 +662,6 @@ h2 {
 }
 .comparison-badge.after {
   left: 1rem;
-}
-.comparison-control {
-  display: grid;
-  gap: 0.6rem 1rem;
-  align-items: center;
-  margin-top: 1.4rem;
-}
-.comparison-control label {
-  font-weight: 600;
-}
-.comparison-control input {
-  width: 100%;
-  min-height: 2.75rem;
-  accent-color: var(--terracotta);
-  cursor: pointer;
-}
-.comparison-control output {
-  color: var(--muted);
-  font-size: 0.85rem;
 }
 @media (prefers-reduced-motion: no-preference) {
   [data-reveal][data-revealed] {
@@ -896,10 +892,6 @@ h2 {
   .hero-image img {
     min-height: 42rem;
   }
-  .comparison-control {
-    grid-template-columns: auto 1fr auto;
-  }
-
   .foundation-note {
     grid-template-columns: auto 1fr auto;
   }

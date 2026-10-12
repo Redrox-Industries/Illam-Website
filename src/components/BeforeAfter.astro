@@ -15,26 +15,24 @@
       loading="lazy"
       alt="Fictional after concept: the same room with warm finishes and comfortable furniture"
     />
-    <span class="comparison-divider" aria-hidden="true"></span>
-    <span class="comparison-badge before" aria-hidden="true">Before</span>
-    <span class="comparison-badge after" aria-hidden="true">After</span>
-  </div>
-  <div class="comparison-control">
-    <label for="concept-split">Reveal designed concept</label>
     <input
       id="concept-split"
+      class="comparison-range"
       type="range"
       min="0"
       max="100"
       value="50"
+      aria-label="Reveal designed concept"
       aria-describedby="comparison-note"
       data-comparison-range
     />
-    <output for="concept-split" data-comparison-output>50% after</output>
+    <span class="comparison-divider" aria-hidden="true"></span>
+    <span class="comparison-badge before" aria-hidden="true">Before</span>
+    <span class="comparison-badge after" aria-hidden="true">After</span>
   </div>
   <p id="comparison-note" class="content-note">
-    Fictional concept study. Both images were generated for this site; they do
-    not depict a completed project.
+    Drag across the image, or use arrow keys, to compare. Fictional concept
+    study; neither image depicts a completed project.
   </p>
 </div>
 
@@ -45,12 +43,8 @@
       const range = comparison.querySelector<HTMLInputElement>(
         '[data-comparison-range]',
       );
-      const output = comparison.querySelector<HTMLOutputElement>(
-        '[data-comparison-output]',
-      );
       range?.addEventListener('input', () => {
         comparison.style.setProperty('--split', `${range.value}%`);
-        if (output) output.value = `${range.value}% after`;
       });
     });
 </script>
