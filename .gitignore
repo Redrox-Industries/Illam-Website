@@ -5,6 +5,7 @@ dist/
 .vercel/
 .netlify/
 .astro-preview.log
+.astro-preview-*.log
 .reference/
 .env
 .env.*

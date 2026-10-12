@@ -1,15 +1,16 @@
 # Illam Website
 
-Premium interior-design marketing website for Redrox Industries. The project uses Astro and TypeScript, deploys to Netlify, and follows a staged implementation plan so each approved chunk remains reviewable.
+Illam is an interior-design concept by Redrox Industries. The project uses Astro and TypeScript, deploys to Netlify, and follows a staged implementation plan so each approved chunk remains reviewable.
 
 ## Current status
 
-Chunks 1, 2, and 3 are complete locally. The live preview still needs the later chunks deployed and verified.
+Chunks 1–3 are implemented. The preview uses approved Illam and Redrox Industries naming; business details and real projects remain placeholders. Enquiries remain disabled by request.
 
 - Live preview: <https://redrox-interior-preview.netlify.app>
 - Indexing: disabled with `noindex` while business facts and content remain placeholders
-- Implemented routes: Home, About Us, Projects, Services, Contact Us, custom 404, robots, and sitemap
+- Implemented routes: Home, About Us, Projects, Services, Contact Us, Privacy status, custom 404, robots, and sitemap
 - Current content: explicit placeholders only; no invented company facts or project claims
+- Parent company link: <https://redroxindustries.com/>
 
 ## What chunk 1 includes
 
@@ -42,6 +43,10 @@ No form submission, project detail routes, or real project images are included i
 - Restrained scroll reveals with no-motion and no-JavaScript fallbacks
 - Refined editorial footer with contact placeholders clearly marked
 - Image source and usage notes in [`docs/imagery-rights.md`](./docs/imagery-rights.md)
+
+## Enquiry status
+
+The contact form stays visibly disabled. The server endpoint rejects submissions unless `ENQUIRY_ENABLED=true` and all delivery credentials are configured. Validation, Turnstile verification, and Resend notification code are prepared, but delivery must not be enabled before approved privacy copy, contact details, and a live delivery test are available.
 
 ## Technology
 
@@ -101,6 +106,7 @@ Copy `.env.example` to a local `.env` when integration work begins. Never commit
 | Variable                    | Purpose                            | Required now            |
 | --------------------------- | ---------------------------------- | ----------------------- |
 | `PUBLIC_SITE_URL`           | Canonical public site URL          | No; configured in Astro |
+| `ENQUIRY_ENABLED`           | Explicit server delivery switch    | No; keep `false`        |
 | `PUBLIC_TURNSTILE_SITE_KEY` | Browser Turnstile widget           | Chunk 4                 |
 | `TURNSTILE_SECRET_KEY`      | Server-side Turnstile verification | Chunk 4                 |
 | `RESEND_API_KEY`            | Resend API authentication          | Chunk 4                 |

@@ -9,10 +9,15 @@ const isCurrent = (href: string) =>
 <header class="site-header" data-header>
   <a class="skip-link" href="#main-content">Skip to content</a>
   <div class="header-inner shell">
-    <a class="wordmark" href="/" aria-label={`${site.name} home`}>
-      <span>{site.name}</span>
-      <small>Interior studio · Preview</small>
-    </a>
+    <div class="wordmark-group">
+      <a class="wordmark" href="/" aria-label={`${site.name} home`}>
+        <span>{site.name}</span>
+        <small>Interior design · Preview</small>
+      </a>
+      <a class="parent-brand" href={site.parentUrl}>
+        A product by {site.parentCompany}
+      </a>
+    </div>
 
     <button
       class="menu-toggle"

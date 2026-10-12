@@ -38,7 +38,7 @@ Build a premium Astro + TypeScript marketing website inspired by the supplied re
 - Keep Projects as a simple gallery without filters or detail routes.
 - Refine the shared footer with an editorial contact lead and clearly marked placeholder details.
 
-## Chunk 4: Enquiry Delivery
+## Chunk 4: Enquiry Delivery — Prepared, Disabled
 
 - Add name, email, phone, project location, space type, area, budget, message, and consent fields.
 - Validate in browser and server. Normalize values and reject unexpected fields.
@@ -47,7 +47,9 @@ Build a premium Astro + TypeScript marketing website inspired by the supplied re
 - Add a footer-only Privacy page before enabling live submissions.
 - Preserve entered values after recoverable errors.
 
-## Chunk 5: Verification and Release
+The user chose to keep enquiries disabled while approved legal copy, contact details, and delivery credentials are unavailable. The endpoint and validation can be verified without enabling submissions; browser submission behavior remains future work.
+
+## Chunk 5: Verification and Release — Preview Verification
 
 - Test every primary route, unknown-route 404 handling, mobile navigation, keyboard use, focus states, contrast, reduced motion, and horizontal overflow.
 - Check widths at 320, 390, 768, 1024, and 1440 pixels.

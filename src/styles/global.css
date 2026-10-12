@@ -127,6 +127,23 @@ textarea {
   flex-shrink: 0;
 }
 
+.wordmark-group {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.parent-brand {
+  color: #d89b79;
+  font-size: 0.68rem;
+  line-height: 1.3;
+  text-decoration: none;
+}
+
+.parent-brand:hover,
+.parent-brand:focus-visible {
+  text-decoration: underline;
+}
+
 .wordmark span {
   font-family: var(--serif);
   font-size: clamp(1.4rem, 2vw, 1.8rem);

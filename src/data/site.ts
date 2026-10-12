@@ -1,8 +1,10 @@
 export const site = {
-  name: '[Studio Name]',
+  name: 'Illam',
+  parentCompany: 'Redrox Industries',
+  parentUrl: 'https://redroxindustries.com/',
   legalName: '[Business legal name]',
   description:
-    'A placeholder interior-design studio creating considered residential and commercial spaces.',
+    'Illam is an interior design concept by Redrox Industries. Business details and real projects are pending approval.',
   email: '[Email address]',
   phone: '[Phone number]',
   location: '[Studio location]',

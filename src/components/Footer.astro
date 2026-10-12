@@ -17,11 +17,11 @@ import { primaryNavigation, site } from '../data/site';
     </div>
     <div class="footer-details">
       <div class="footer-identity">
-        <p class="footer-label">Studio preview</p>
+        <p class="footer-label">Interior design preview</p>
         <p class="footer-wordmark">{site.name}</p>
         <p>
-          Interior design concept site. Identity and contact details pending
-          approval.
+          A product by <a href={site.parentUrl}>{site.parentCompany}</a>.
+          Contact details pending approval.
         </p>
       </div>
       <div class="footer-nav">
@@ -47,6 +47,7 @@ import { primaryNavigation, site } from '../data/site';
     </div>
     <div class="footer-base">
       <p>© {new Date().getFullYear()} {site.name}. Concept preview.</p>
+      <a href="/privacy">Privacy</a>
       <a href="#top">Back to top <span aria-hidden="true">↑</span></a>
     </div>
   </div>
