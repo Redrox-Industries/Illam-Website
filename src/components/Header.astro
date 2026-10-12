@@ -11,7 +11,7 @@ const isCurrent = (href: string) =>
   <div class="header-inner shell">
     <a class="wordmark" href="/" aria-label={`${site.name} home`}>
       <span>{site.name}</span>
-      <small>Interiors</small>
+      <small>Interior studio · Preview</small>
     </a>
 
     <button
@@ -54,6 +54,10 @@ const isCurrent = (href: string) =>
   const toggle =
     document.querySelector<HTMLButtonElement>('[data-menu-toggle]');
   const menu = document.querySelector<HTMLElement>('[data-menu]');
+  let previousScrollY = window.scrollY;
+  let scrollTicking = false;
+
+  const showHeader = () => header?.removeAttribute('data-hidden');
 
   const closeMenu = () => {
     toggle?.setAttribute('aria-expanded', 'false');
@@ -64,6 +68,7 @@ const isCurrent = (href: string) =>
     const willOpen = toggle.getAttribute('aria-expanded') !== 'true';
     toggle.setAttribute('aria-expanded', String(willOpen));
     header?.toggleAttribute('data-open', willOpen);
+    if (willOpen) showHeader();
   });
 
   menu?.addEventListener('click', (event) => {
@@ -73,4 +78,35 @@ const isCurrent = (href: string) =>
   window.addEventListener('keydown', (event) => {
     if (event.key === 'Escape') closeMenu();
   });
+
+  header?.addEventListener('focusin', showHeader);
+
+  window.addEventListener(
+    'scroll',
+    () => {
+      if (scrollTicking) return;
+      scrollTicking = true;
+      requestAnimationFrame(() => {
+        const currentScrollY = Math.max(0, window.scrollY);
+        header?.toggleAttribute('data-scrolled', currentScrollY > 24);
+        if (currentScrollY < 140 || currentScrollY < previousScrollY - 8) {
+          showHeader();
+        } else if (
+          currentScrollY > previousScrollY + 8 &&
+          !header?.hasAttribute('data-open') &&
+          !header?.contains(document.activeElement)
+        ) {
+          header?.setAttribute('data-hidden', '');
+        }
+        if (
+          Math.abs(currentScrollY - previousScrollY) > 8 ||
+          currentScrollY < 140
+        ) {
+          previousScrollY = currentScrollY;
+        }
+        scrollTicking = false;
+      });
+    },
+    { passive: true },
+  );
 </script>
