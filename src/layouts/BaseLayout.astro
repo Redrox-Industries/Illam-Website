@@ -20,8 +20,9 @@ const {
 } = Astro.props;
 
 const pageTitle = title ? `${title} | ${site.name}` : site.name;
-const canonical = new URL(Astro.url.pathname, Astro.site);
-const socialImage = new URL(image, Astro.site);
+const baseUrl = Astro.site ?? Astro.url;
+const canonical = new URL(Astro.url.pathname, baseUrl);
+const socialImage = new URL(image, baseUrl);
 ---
 
 <!doctype html>
