@@ -1,0 +1,67 @@
+<script>
+  const reduceMotion = window.matchMedia(
+    '(prefers-reduced-motion: reduce)',
+  ).matches;
+
+  if (!reduceMotion) {
+    document.documentElement.dataset.motionReady = '';
+
+    const targets = document.querySelectorAll<HTMLElement>('[data-reveal]');
+
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          for (const entry of entries) {
+            if (!entry.isIntersecting) continue;
+            (entry.target as HTMLElement).dataset.revealed = '';
+            observer.unobserve(entry.target);
+          }
+        },
+        { rootMargin: '0px 0px -10% 0px', threshold: 0.12 },
+      );
+      targets.forEach((target) => observer.observe(target));
+    } else {
+      targets.forEach((target) => (target.dataset.revealed = ''));
+    }
+
+    const header = document.querySelector<HTMLElement>('[data-header]');
+    const parallaxImages =
+      document.querySelectorAll<HTMLElement>('[data-parallax]');
+    let framePending = false;
+
+    const updateScrollMotion = () => {
+      const scrollRange =
+        document.documentElement.scrollHeight - window.innerHeight;
+      const progress = scrollRange > 0 ? window.scrollY / scrollRange : 0;
+      header?.style.setProperty(
+        '--scroll-progress',
+        String(Math.min(1, Math.max(0, progress))),
+      );
+
+      parallaxImages.forEach((image) => {
+        const rect = image.parentElement?.getBoundingClientRect();
+        if (!rect || rect.bottom < 0 || rect.top > window.innerHeight) return;
+        const centerOffset =
+          (rect.top + rect.height / 2 - window.innerHeight / 2) /
+          window.innerHeight;
+        image.style.setProperty(
+          '--parallax-y',
+          `${Math.max(-18, Math.min(18, centerOffset * -18)).toFixed(2)}px`,
+        );
+      });
+      framePending = false;
+    };
+
+    window.addEventListener(
+      'scroll',
+      () => {
+        if (framePending) return;
+        framePending = true;
+        requestAnimationFrame(updateScrollMotion);
+      },
+      { passive: true },
+    );
+    window.addEventListener('resize', updateScrollMotion, { passive: true });
+    updateScrollMotion();
+  }
+</script>

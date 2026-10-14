@@ -53,3 +53,44 @@ const isCurrent = (href: string) =>
     </nav>
   </div>
 </header>
+
+<script>
+  const header = document.querySelector<HTMLElement>('[data-header]');
+  const toggle =
+    document.querySelector<HTMLButtonElement>('[data-menu-toggle]');
+  const menu = document.querySelector<HTMLElement>('[data-menu]');
+  let scrollTicking = false;
+
+  const closeMenu = () => {
+    toggle?.setAttribute('aria-expanded', 'false');
+    header?.removeAttribute('data-open');
+  };
+
+  toggle?.addEventListener('click', () => {
+    const willOpen = toggle.getAttribute('aria-expanded') !== 'true';
+    toggle.setAttribute('aria-expanded', String(willOpen));
+    header?.toggleAttribute('data-open', willOpen);
+  });
+
+  menu?.addEventListener('click', (event) => {
+    if ((event.target as HTMLElement).closest('a')) closeMenu();
+  });
+
+  window.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') closeMenu();
+  });
+
+  window.addEventListener(
+    'scroll',
+    () => {
+      if (scrollTicking) return;
+      scrollTicking = true;
+      requestAnimationFrame(() => {
+        const currentScrollY = Math.max(0, window.scrollY);
+        header?.toggleAttribute('data-scrolled', currentScrollY > 24);
+        scrollTicking = false;
+      });
+    },
+    { passive: true },
+  );
+</script>

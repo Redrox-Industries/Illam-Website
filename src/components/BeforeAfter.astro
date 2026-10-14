@@ -1,12 +1,10 @@
-<div class="comparison" data-comparison>
+<div class="comparison" data-comparison style="--split: 50%">
   <div class="comparison-images">
     <img
       src="/images/concept-before.webp"
       width="1440"
       height="960"
       loading="lazy"
-      draggable="false"
-      data-protected-image
       alt="Fictional before concept: an empty room with a rear window and grey tile floor"
     />
     <img
@@ -15,8 +13,6 @@
       width="1440"
       height="960"
       loading="lazy"
-      draggable="false"
-      data-protected-image
       alt="Fictional after concept: the same room with warm finishes and comfortable furniture"
     />
     <input
@@ -39,3 +35,16 @@
     study; neither image depicts a completed project.
   </p>
 </div>
+
+<script>
+  document
+    .querySelectorAll<HTMLElement>('[data-comparison]')
+    .forEach((comparison) => {
+      const range = comparison.querySelector<HTMLInputElement>(
+        '[data-comparison-range]',
+      );
+      range?.addEventListener('input', () => {
+        comparison.style.setProperty('--split', `${range.value}%`);
+      });
+    });
+</script>
