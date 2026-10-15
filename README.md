@@ -12,10 +12,22 @@ Chunks 1–3 are implemented. The website uses supplied Sirpi Interiors branding
 - Current content: explicit placeholders only; no invented company facts or project claims
 - Parent company link: <https://redroxindustries.com/>
 
+## Brand and visual system
+
+- The current `Logo2.png` source is used through `public/images/sirpi-interiors-logo-horizontal.png` in both the header and footer.
+- Deep burgundy (`#390006`, `#4b0008`, `#65000a`) provides dark surfaces, primary text, and actions.
+- Antique gold (`#d6aa49`, `#f1d78d`, `#81570d`) provides emphasis, interactive states, and readable accents.
+- Warm ivory (`#f4eee6`, `#fffaf2`) provides page and panel backgrounds.
+- Muted wine (`#76565a`) provides secondary copy on light surfaces.
+- Shared CSS tokens apply the palette across every route; dark surfaces use warm ivory and gold text for contrast.
+- Section spacing uses the shared fluid `--section-space` token. The editorial rhythm scales from mobile to desktop without route-specific spacing overrides.
+
+Responsive spacing and theme were visually checked on Home, About Us, Projects, Services, Contact Us, Privacy, and 404 at 375px, 768px, and 1440px. The audit found no horizontal overflow or out-of-bounds content. Header and footer logo placements were also checked at mobile and desktop widths.
+
 ## What chunk 1 includes
 
 - Responsive page shell with mobile-first navigation and footer
-- Warm-neutral design tokens, editorial typography, accessible focus states, and reduced-motion handling
+- Logo-derived burgundy, gold, and warm-ivory design tokens, editorial typography, accessible focus states, and reduced-motion handling
 - Central typed site-data placeholders
 - Reusable Astro layout and navigation components
 - Canonical and social metadata foundation

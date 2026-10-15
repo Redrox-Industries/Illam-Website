@@ -129,7 +129,7 @@ textarea {
 
 .wordmark {
   width: clamp(7rem, 11vw, 9rem);
-  height: clamp(4rem, 6vw, 5rem);
+  height: auto;
   overflow: hidden;
   display: block;
   text-decoration: none;
@@ -140,7 +140,6 @@ textarea {
   display: block;
   width: 100%;
   height: auto;
-  transform: translateY(-20%);
 }
 
 .wordmark-group {
@@ -492,7 +491,7 @@ h2 {
 
 .footer-brand {
   width: min(100%, 14rem);
-  height: 8rem;
+  height: auto;
   overflow: hidden;
   margin-bottom: 1rem;
 }
@@ -501,7 +500,6 @@ h2 {
   display: block;
   width: 100%;
   height: auto;
-  transform: translateY(-20%);
 }
 .footer-identity > p:last-child {
   color: rgba(250, 247, 240, 0.62);

@@ -12,6 +12,8 @@
 - Kept the original supplied JPEG unchanged as a source reference while using the later transparent logo supplied for the website.
 - Switched the site to the separately supplied transparent `Logo2.png` asset. CSS crops only Logo2's unused vertical space so its combined crest and wordmark remain visible without adding duplicate text.
 - Applied the updated transparent `Logo2.png` asset to both header and footer, set the company name to Sirpi Interiors throughout the site, and removed public-facing contact-pending and concept-preview wording at the user's request.
+- Replaced the earlier square `Logo2.png` copy with the later wide, high-resolution file supplied under the same name. Removed square-specific vertical cropping so the complete crest, Tamil wordmark, and `INTERIORS` line remain visible in both placements.
+- Replaced the shared footer question “Have a space in mind?” with the clearer call to action “Let’s shape your space.” across every route.
 - Replaced the previous terracotta and olive accents with deep burgundy, antique gold, soft gold, and warm ivory tokens sampled from the logo. A darker gold token is used for small text on light backgrounds to preserve readable contrast.
 - Changed primary and secondary text from neutral near-black and gray to deep burgundy and muted wine. Dark sections keep warm ivory and gold text, giving every text role a logo-derived color while retaining strong contrast.
 - Kept all existing placeholder warnings, `noindex`, disabled enquiry behavior, content structure, and the Redrox Industries relationship unchanged. This limits the change to approved branding and avoids treating missing business information as confirmed.
