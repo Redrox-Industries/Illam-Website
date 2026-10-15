@@ -14,7 +14,7 @@ Chunks 1–3 are implemented. The website uses supplied Sirpi Interiors branding
 
 ## Brand and visual system
 
-- The current `Logo2.png` source is used through `public/images/sirpi-interiors-logo-horizontal.png` in both the header and footer.
+- The current `Logo2.png` source is delivered through the optimized `public/images/sirpi-interiors-logo-horizontal.webp` asset in both the header and footer. The transparent `720×360` WebP is approximately 92% smaller than the source PNG while retaining retina headroom for its displayed size.
 - The supplied Sirpi favicon package provides ICO, PNG, Apple touch, and Android icons through the shared page metadata and web manifest.
 - Deep burgundy (`#390006`, `#4b0008`, `#65000a`) provides dark surfaces, primary text, and actions.
 - Antique gold (`#d6aa49`, `#f1d78d`, `#81570d`) provides emphasis, interactive states, and readable accents.

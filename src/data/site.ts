@@ -1,6 +1,6 @@
 export const site = {
   name: 'Sirpi Interiors',
-  headerLogo: '/images/sirpi-interiors-logo-horizontal.png',
+  headerLogo: '/images/sirpi-interiors-logo-horizontal.webp',
   parentCompany: 'Redrox Industries',
   parentUrl: 'https://redroxindustries.com/',
   legalName: '[Business legal name]',

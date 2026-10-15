@@ -16,6 +16,7 @@
 - Replaced the shared footer question “Have a space in mind?” with the clearer call to action “Let’s shape your space.” across every route.
 - Replaced the placeholder SVG favicon with the supplied Sirpi favicon package. Added ICO and 16px, 32px, Apple touch, and Android icon declarations plus a themed web manifest so browsers and installed shortcuts select the correct asset.
 - Added a route-specific Netlify content type for `site.webmanifest`. This prevents the global `nosniff` security header from blocking a manifest served as generic binary data.
+- Converted the 1.09 MB, `1774×887` Logo2 PNG into a transparent 91 KB, `720×360` WebP for header and footer delivery. WebP at quality 90 preserves the detailed gold mark while cutting its transfer size by about 92%; the original source remains unchanged locally.
 - Replaced the previous terracotta and olive accents with deep burgundy, antique gold, soft gold, and warm ivory tokens sampled from the logo. A darker gold token is used for small text on light backgrounds to preserve readable contrast.
 - Changed primary and secondary text from neutral near-black and gray to deep burgundy and muted wine. Dark sections keep warm ivory and gold text, giving every text role a logo-derived color while retaining strong contrast.
 - Kept all existing placeholder warnings, `noindex`, disabled enquiry behavior, content structure, and the Redrox Industries relationship unchanged. This limits the change to approved branding and avoids treating missing business information as confirmed.
