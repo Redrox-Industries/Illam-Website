@@ -1,5 +1,22 @@
 # Engineering decisions
 
+## 2026-10-15: Reframe Home as an accessible heritage scroll story
+
+- Added an original doorway-entry component before Home content. Scroll progress opens CSS entrance shutters over a direct heritage living-room concept, then naturally hands the visitor to the existing content.
+- Refined the client-reviewed opening to show only the full-screen doorway: no visible header, headline, prompt, or controls appear during entry. A visually hidden page heading preserves document structure for assistive technology.
+- Extended the doorway sequence from 185 to 340 viewport heights and increased the background zoom. The doors now open over a longer deliberate scroll and the camera moves further into the interior before the first content chapter appears.
+- The shared header becomes fixed for the enhanced Home and remains hidden until the doorway sequence is almost complete. No-JavaScript and reduced-motion paths retain the normal visible sticky header.
+- Used a `requestAnimationFrame`-throttled CSS custom property instead of a scroll animation library. Astro needs no added runtime dependency, browser work stays small, and the rendering layer owns visual interpolation.
+- Kept the component as progressive enhancement. Without JavaScript, the doorway is a normal readable hero; with `prefers-reduced-motion`, it is static and no scroll-pinned motion is enabled.
+- Kept Home as a six-chapter narrative—Arrival, Craft, Rooms, Transformation, Process, Invitation—while preserving separate About, Projects, Services, and Contact routes. This satisfies the client’s entering-a-home story without removing existing navigation.
+- Replaced the earlier dual type stack with Cormorant Garamond as the only loaded web font. One family gives the requested traditional editorial character and removes a second font request; Georgia remains only as a loading fallback.
+- Added three original concept images: doorway entry, courtyard living, and heritage dining. They use teak, brass, lime-plaster, stone, courtyard light, and handmade-tile cues rather than literal temple imagery. They remain fictional and are documented in `docs/imagery-rights.md`.
+- Updated the Transformation slider with a matched fictional after-state using carved teak, cane, brass, woven textiles, and warm lime-plaster tones. The existing before-state remains unchanged so the interactive comparison still communicates one room changing, while the new after-state now follows the approved South Indian heritage direction.
+- Encoded the new production images as WebP at quality 86–88. WebP preserves the photographic material detail at substantially lower transfer sizes than their generated PNG sources.
+- The client-provided `demo video.mp4` stays local and unpublished. It informed the scroll-to-enter interaction only; no frames, text, UI, branding, or imagery from it are shipped.
+- Added a Playwright configuration and focused Home browser tests. The previous `test:e2e` command had no Playwright test boundary, so it loaded Vitest unit files and failed before testing the site. The new suite verifies deep doorway scroll, header handoff, updated heritage Transformation imagery, mobile overflow, and reduced-motion fallback in Chromium.
+- Replaced the entry background that repeated a photographed doorway with a direct living-room view. The only doors now are the animated CSS entrance shutters; opening them and scrolling moves straight into the room instead of revealing another door. Added a Vitest boundary so unit tests exclude Playwright browser specs.
+
 ## 2026-10-15: Align the checkout with the Sirpi repository identity
 
 - Changed the Git origin from `Redrox-Industries/Illam-Website` to the user-supplied `Redrox-Industries/Sirpi-Website` repository after confirming the remote exists.

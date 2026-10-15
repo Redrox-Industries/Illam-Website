@@ -4,7 +4,7 @@ Sirpi Interiors is an interior-design website by Redrox Industries. The project 
 
 ## Current status
 
-Chunks 1–3 are implemented. The website uses supplied Sirpi Interiors branding and the existing Redrox Industries relationship; business details and real projects remain placeholders. Enquiries remain disabled by request.
+Chunks 1–3 are implemented, including the Home scroll-story enhancement. The website uses supplied Sirpi Interiors branding and the existing Redrox Industries relationship; business details and real projects remain placeholders. Enquiries remain disabled by request.
 
 - Live preview: <https://redrox-interior-preview.netlify.app>
 - Indexing: disabled with `noindex` while business facts and content remain placeholders
@@ -22,6 +22,9 @@ Chunks 1–3 are implemented. The website uses supplied Sirpi Interiors branding
 - Muted wine (`#76565a`) provides secondary copy on light surfaces.
 - Shared CSS tokens apply the palette across every route; dark surfaces use warm ivory and gold text for contrast.
 - Section spacing uses the shared fluid `--section-space` token. The editorial rhythm scales from mobile to desktop without route-specific spacing overrides.
+- Home opens with an original full-screen doorway: the initial view contains no visible header or copy, a longer scroll opens the CSS shutters, and the camera pushes deeply into the interior before content begins. The supplied demo video informed this interaction only; its media, text, and interface are not shipped.
+- Cormorant Garamond is the sole loaded web font across headings, body copy, navigation, forms, and actions. A serif fallback remains for offline or failed font loading.
+- Traditional character stays architectural rather than literal: teak, brass, lime-plaster, stone, courtyard light, and restrained handmade-tile references guide the palette and generated concept imagery.
 
 Responsive spacing and theme were visually checked on Home, About Us, Projects, Services, Contact Us, Privacy, and 404 at 375px, 768px, and 1440px. The audit found no horizontal overflow or out-of-bounds content. Header and footer logo placements were also checked at mobile and desktop widths.
 
@@ -52,10 +55,19 @@ No form submission, project detail routes, or real project images are included i
 ## What chunk 3 includes
 
 - Original generated concept imagery for Home and the fictional Projects gallery
-- Keyboard-accessible before/after slider using two images of the same fictional room
+- Keyboard-accessible before/after slider using matched fictional room views, with a refined South Indian heritage after-state
 - Restrained scroll reveals with no-motion and no-JavaScript fallbacks
 - Refined editorial footer with contact placeholders clearly marked
 - Image source and usage notes in [`docs/imagery-rights.md`](./docs/imagery-rights.md)
+
+## Home scroll-story enhancement
+
+- `DoorEntry.astro` adds the original doorway entry sequence before the Home chapters.
+- JavaScript only sets a scroll-progress CSS custom property with `requestAnimationFrame`; the site remains readable with JavaScript unavailable.
+- `prefers-reduced-motion` keeps the doorway static and bypasses the scroll-pinned transition.
+- Home content follows a six-part narrative: Arrival, Craft, Rooms, Transformation, Process, and Invitation.
+- Three original concept images support the traditional direction: doorway entry, courtyard living room, and heritage dining room. They are WebP assets and remain labeled fictional wherever presented as work.
+- The sticky header, route navigation, disabled enquiry flow, `noindex`, placeholder safeguards, and separate primary pages remain unchanged.
 
 ## Enquiry status
 

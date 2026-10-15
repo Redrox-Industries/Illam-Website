@@ -1,0 +1,59 @@
+---
+interface Props {
+  image: string;
+}
+
+const { image } = Astro.props;
+---
+
+<section class="entry-portal" data-entry-portal aria-labelledby="entry-title">
+  <h1 id="entry-title" class="visually-hidden">
+    Sirpi Interiors — step into living heritage
+  </h1>
+  <div class="entry-portal-stage">
+    <img
+      class="entry-portal-image"
+      src={image}
+      width="1536"
+      height="1024"
+      fetchpriority="high"
+      alt="Original concept of a warm South Indian heritage living room"
+    />
+    <span class="entry-shutter entry-shutter-start" aria-hidden="true"></span>
+    <span class="entry-shutter entry-shutter-end" aria-hidden="true"></span>
+    <div class="entry-portal-scrim" aria-hidden="true"></div>
+  </div>
+</section>
+
+<script>
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const portal = document.querySelector<HTMLElement>('[data-entry-portal]');
+
+  if (portal && !reducedMotion.matches) {
+    document.documentElement.dataset.entryReady = '';
+    document.documentElement.dataset.entryActive = '';
+    let framePending = false;
+
+    const updateEntry = () => {
+      const rect = portal.getBoundingClientRect();
+      const distance = Math.max(1, portal.offsetHeight - window.innerHeight);
+      const progress = Math.min(1, Math.max(0, -rect.top / distance));
+      portal.style.setProperty('--entry-progress', progress.toFixed(3));
+      document.documentElement.toggleAttribute(
+        'data-entry-active',
+        progress < 0.985,
+      );
+      framePending = false;
+    };
+
+    const requestUpdate = () => {
+      if (framePending) return;
+      framePending = true;
+      requestAnimationFrame(updateEntry);
+    };
+
+    window.addEventListener('scroll', requestUpdate, { passive: true });
+    window.addEventListener('resize', requestUpdate, { passive: true });
+    updateEntry();
+  }
+</script>

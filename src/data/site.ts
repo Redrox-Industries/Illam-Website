@@ -70,9 +70,9 @@ export const sampleProjects = [
     category: 'Residential',
     description:
       'Fictional sample: a quiet home organised around light and a central courtyard.',
-    image: '/images/sample-residential.webp',
+    image: '/images/sirpi-courtyard-living.webp',
     imageAlt:
-      'Fictional residential interior concept with a curved sofa and leafy courtyard',
+      'Original fictional concept of a heritage living room opening to a planted courtyard',
   },
   {
     number: '02',
@@ -80,9 +80,9 @@ export const sampleProjects = [
     category: 'Commercial',
     description:
       'Fictional sample: a flexible workplace with warm, practical shared areas.',
-    image: '/images/sample-commercial.webp',
+    image: '/images/sirpi-heritage-dining.webp',
     imageAlt:
-      'Fictional commercial interior concept with a long timber worktable',
+      'Original fictional concept of a heritage dining room with teak furniture and handmade tile',
   },
   {
     number: '03',

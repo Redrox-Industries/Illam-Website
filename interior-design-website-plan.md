@@ -38,6 +38,16 @@ Build a premium Astro + TypeScript marketing website inspired by the supplied re
 - Keep Projects as a simple gallery without filters or detail routes.
 - Refine the shared footer with an editorial contact lead and clearly marked placeholder details.
 
+## Enhancement: Traditional Home Scroll Story — Complete locally
+
+- Replace the Home opening with an original scroll-led doorway entry inspired only by the client-approved interaction direction in `demo video.mp4`.
+- Keep the demo video local and excluded from publication. Do not reuse its text, UI, frames, branding, or imagery.
+- Use Cormorant Garamond as the single loaded web font across the site, with a serif fallback for loading failures.
+- Treat the visual language as refined South Indian heritage: teak, brass, lime-plaster, stone, courtyard light, and restrained handmade-tile motifs rather than literal temple scenery.
+- Structure Home as six scroll chapters: Arrival, Craft, Rooms, Transformation, Process, and Invitation.
+- Use original generated concepts for the doorway and two Home project previews; preserve fictional-content labels and record every asset in `docs/imagery-rights.md`.
+- Provide progressive enhancement: JavaScript scroll motion only, static accessible doorway without JavaScript, and no pinned motion when reduced motion is requested.
+
 ## Chunk 4: Enquiry Delivery — Prepared, Disabled
 
 - Add name, email, phone, project location, space type, area, budget, message, and consent fields.

@@ -1,47 +1,24 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import BeforeAfter from '../components/BeforeAfter.astro';
+import DoorEntry from '../components/DoorEntry.astro';
 import { sampleProjects, services } from '../data/site';
 ---
 
 <BaseLayout>
-  <section class="foundation-hero">
-    <div class="shell foundation-grid">
-      <div class="foundation-copy">
-        <p class="eyebrow">Sirpi Interiors · Interior design</p><h1>
-          Interiors with<br /><em>room to belong.</em>
-        </h1><p class="lede">
-          A considered space begins with listening. Explore the studio approach
-          while brand details and real work await approval.
-        </p><a class="button" href="/contact">Start a conversation</a>
-      </div><figure class="hero-image">
-        <img
-          src="/images/hero-interior.webp"
-          width="1440"
-          height="960"
-          fetchpriority="high"
-          data-parallax
-          alt="Fictional warm living room concept opening toward a planted courtyard"
-        />
-        <figcaption>Original concept image · Fictional interior</figcaption>
-      </figure>
-    </div><div class="shell foundation-note">
-      <span>01</span><p>Spaces for living and gathering</p><p>
-        Spaces shaped with care
-      </p>
-    </div>
-  </section>
+  <DoorEntry image="/images/sirpi-doorway-entry.webp" />
   <section
-    class="foundation-section shell"
+    class="foundation-section shell arrival-section"
     aria-labelledby="intro-heading"
     data-reveal
+    id="arrival"
   >
-    <p class="eyebrow">The studio</p><div class="section-split">
-      <h2 id="intro-heading">A quieter way to shape space.</h2><div>
+    <p class="eyebrow">01 · Arrival</p><div class="section-split">
+      <h2 id="intro-heading">A home begins with how it welcomes you.</h2><div>
         <p>
-          Thoughtful interiors bring use, atmosphere, and detail together. This
-          studio introduction is placeholder copy until the business story is
-          supplied.
+          Sirpi brings material, light, and everyday rituals into one considered
+          interior language. Studio history and business details remain pending
+          approval.
         </p><a class="text-link" href="/about"
           >About the studio <span aria-hidden="true">↗</span></a
         >
@@ -52,8 +29,8 @@ import { sampleProjects, services } from '../data/site';
     <div class="shell">
       <div class="section-heading">
         <div>
-          <p class="eyebrow">What we explore</p><h2 id="services-heading">
-            Design for every kind of space.
+          <p class="eyebrow">02 · Craft</p><h2 id="services-heading">
+            Tradition, considered for today.
           </h2>
         </div><a class="text-link" href="/services"
           >All services <span aria-hidden="true">↗</span></a
@@ -82,8 +59,8 @@ import { sampleProjects, services } from '../data/site';
   >
     <div class="section-heading">
       <div>
-        <p class="eyebrow">Selected studies</p><h2 id="projects-heading">
-          Space, in possibility.
+        <p class="eyebrow">03 · Rooms</p><h2 id="projects-heading">
+          Rooms with memory and purpose.
         </h2>
       </div><a class="text-link" href="/projects"
         >View sample gallery <span aria-hidden="true">↗</span></a
@@ -118,10 +95,8 @@ import { sampleProjects, services } from '../data/site';
     <div class="shell">
       <div class="section-heading">
         <div>
-          <p class="eyebrow">A possible transformation</p><h2
-            id="comparison-heading"
-          >
-            See the space shift.
+          <p class="eyebrow">04 · Transformation</p><h2 id="comparison-heading">
+            See heritage take root.
           </h2>
         </div>
       </div>
@@ -131,8 +106,8 @@ import { sampleProjects, services } from '../data/site';
   <section class="section-band" aria-labelledby="process-heading" data-reveal>
     <div class="shell process-grid">
       <div>
-        <p class="eyebrow">A simple path</p><h2 id="process-heading">
-          From first thought to final detail.
+        <p class="eyebrow">05 · Process</p><h2 id="process-heading">
+          From first conversation to final detail.
         </h2>
       </div><ol class="process-list">
         <li>
@@ -162,8 +137,8 @@ import { sampleProjects, services } from '../data/site';
     </div>
   </section>
   <section class="foundation-section shell contact-callout">
-    <p class="eyebrow">Your space, next</p><h2>
-      What could your space become?
+    <p class="eyebrow">06 · Invitation</p><h2>
+      What will your home remember?
     </h2><a class="button" href="/contact">Contact the studio</a>
   </section>
 </BaseLayout>
