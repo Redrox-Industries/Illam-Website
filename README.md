@@ -1,10 +1,10 @@
-# Illam Website
+# Sirpi Interiors Website
 
-Illam is an interior-design concept by Redrox Industries. The project uses Astro and TypeScript, deploys to Netlify, and follows a staged implementation plan so each approved chunk remains reviewable.
+Sirpi Interiors is an interior-design website by Redrox Industries. The project uses Astro and TypeScript, deploys to Netlify, and follows a staged implementation plan so each approved chunk remains reviewable.
 
 ## Current status
 
-Chunks 1–3 are implemented. The preview uses approved Illam and Redrox Industries naming; business details and real projects remain placeholders. Enquiries remain disabled by request.
+Chunks 1–3 are implemented. The website uses supplied Sirpi Interiors branding and the existing Redrox Industries relationship; business details and real projects remain placeholders. Enquiries remain disabled by request.
 
 - Live preview: <https://redrox-interior-preview.netlify.app>
 - Indexing: disabled with `noindex` while business facts and content remain placeholders

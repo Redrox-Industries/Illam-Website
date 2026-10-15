@@ -11,8 +11,13 @@ const isCurrent = (href: string) =>
   <div class="header-inner shell">
     <div class="wordmark-group">
       <a class="wordmark" href="/" aria-label={`${site.name} home`}>
-        <span>{site.name}</span>
-        <small>Interior design · Preview</small>
+        <img
+          class="brand-logo"
+          src={site.headerLogo}
+          alt={site.name}
+          width="1254"
+          height="1254"
+        />
       </a>
       <a class="parent-brand" href={site.parentUrl}>
         A product by {site.parentCompany}

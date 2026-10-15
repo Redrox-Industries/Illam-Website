@@ -17,12 +17,17 @@ import { primaryNavigation, site } from '../data/site';
     </div>
     <div class="footer-details">
       <div class="footer-identity">
-        <p class="footer-label">Interior design preview</p>
-        <p class="footer-wordmark">{site.name}</p>
-        <p>
-          A product by <a href={site.parentUrl}>{site.parentCompany}</a>.
-          Contact details pending approval.
-        </p>
+        <p class="footer-label">Sirpi Interiors</p>
+        <div class="footer-brand">
+          <img
+            src={site.headerLogo}
+            alt={site.name}
+            width="500"
+            height="500"
+            loading="lazy"
+          />
+        </div>
+        <p>A product by <a href={site.parentUrl}>{site.parentCompany}</a>.</p>
       </div>
       <div class="footer-nav">
         <p class="footer-label">Explore</p>
@@ -46,7 +51,7 @@ import { primaryNavigation, site } from '../data/site';
       </div>
     </div>
     <div class="footer-base">
-      <p>© {new Date().getFullYear()} {site.name}. Concept preview.</p>
+      <p>© {new Date().getFullYear()} {site.name}.</p>
       <a href="/privacy">Privacy</a>
       <a href="#top">Back to top <span aria-hidden="true">↑</span></a>
     </div>

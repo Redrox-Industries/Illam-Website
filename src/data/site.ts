@@ -1,10 +1,11 @@
 export const site = {
-  name: 'Illam',
+  name: 'Sirpi Interiors',
+  headerLogo: '/images/sirpi-interiors-logo-horizontal.png',
   parentCompany: 'Redrox Industries',
   parentUrl: 'https://redroxindustries.com/',
   legalName: '[Business legal name]',
   description:
-    'Illam is an interior design concept by Redrox Industries. Business details and real projects are pending approval.',
+    'Sirpi Interiors is an interior design studio by Redrox Industries. Business details and real projects are pending approval.',
   email: '[Email address]',
   phone: '[Phone number]',
   location: '[Studio location]',
