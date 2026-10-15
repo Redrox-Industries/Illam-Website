@@ -6,6 +6,12 @@
   NODE_VERSION = "24"
 
 [[headers]]
+  for = "/site.webmanifest"
+
+  [headers.values]
+    Content-Type = "application/manifest+json; charset=utf-8"
+
+[[headers]]
   for = "/*"
 
   [headers.values]
